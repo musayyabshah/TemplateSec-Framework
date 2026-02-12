@@ -1,0 +1,63 @@
+[
+  {
+    "id": "xss_dom_js",
+    "metadata": {
+      "category": "dom",
+      "context": "js"
+    },
+    "module": "xss",
+    "notes": "Concept-only DOM sink flow in script context. Defenders should sanitize DOM writes, avoid unsafe sinks, and enforce Trusted Types where available.",
+    "template": "{{XSS_DOM_JS_CONTEXT}}",
+    "transforms": [
+      "url",
+      "base64",
+      "hex",
+      "encoding_layer_description",
+      "context_switch_description",
+      "safe_obfuscation:comment_insertion",
+      "safe_obfuscation:mixed_encoding_note",
+      "safe_obfuscation:whitespace_abuse"
+    ]
+  },
+  {
+    "id": "xss_reflected_html",
+    "metadata": {
+      "category": "reflected",
+      "context": "html"
+    },
+    "module": "xss",
+    "notes": "Concept-only reflected input in HTML context. Defenders should apply output encoding, strict templating, and CSP to reduce unsafe rendering risks.",
+    "template": "{{XSS_REFLECTED_HTML_CONTEXT}}",
+    "transforms": [
+      "url",
+      "base64",
+      "hex",
+      "comment_insertion",
+      "whitespace_tokens",
+      "mixed_encoding",
+      "safe_obfuscation:comment_insertion",
+      "safe_obfuscation:mixed_encoding_note",
+      "safe_obfuscation:whitespace_abuse"
+    ]
+  },
+  {
+    "id": "xss_stored_attribute",
+    "metadata": {
+      "category": "stored",
+      "context": "attribute"
+    },
+    "module": "xss",
+    "notes": "Concept-only stored input in attribute context. Defenders should validate attributes, enforce allowlists, and use context-aware encoding.",
+    "template": "{{XSS_STORED_ATTRIBUTE_CONTEXT}}",
+    "transforms": [
+      "url",
+      "base64",
+      "hex",
+      "case_variation_description",
+      "tag_switch_description",
+      "safe_obfuscation:comment_insertion",
+      "safe_obfuscation:mixed_encoding_note",
+      "safe_obfuscation:whitespace_abuse"
+    ]
+  }
+]
