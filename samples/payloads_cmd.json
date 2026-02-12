@@ -1,0 +1,60 @@
+[
+  {
+    "id": "cmd_chaining_linux",
+    "metadata": {
+      "os": "linux",
+      "pattern_type": "chaining-pattern"
+    },
+    "module": "cmd",
+    "notes": "Concept-only command chaining study pattern using [[CMD_CHAIN_TOKEN]]. Defenders should tokenize input, enforce command maps, and sandbox execution contexts where commands are unavoidable.",
+    "template": "{{CMD_INJECTION_CHAINING_TEMPLATE_LINUX}}",
+    "transforms": [
+      "url",
+      "base64",
+      "hex",
+      "mixed_encoding",
+      "safe_obfuscation:comment_insertion",
+      "safe_obfuscation:mixed_encoding_note",
+      "safe_obfuscation:whitespace_abuse"
+    ]
+  },
+  {
+    "id": "cmd_separator_linux",
+    "metadata": {
+      "os": "linux",
+      "pattern_type": "separator-pattern"
+    },
+    "module": "cmd",
+    "notes": "Concept-only command separator pattern represented with [[CMD_SEPARATOR]]. Defenders should use direct API invocation, strict allowlists, and avoid shell interpolation entirely.",
+    "template": "{{CMD_INJECTION_SEPARATOR_TEMPLATE_LINUX}}",
+    "transforms": [
+      "url",
+      "base64",
+      "hex",
+      "whitespace_tokens",
+      "comment_tokens",
+      "safe_obfuscation:comment_insertion",
+      "safe_obfuscation:mixed_encoding_note",
+      "safe_obfuscation:whitespace_abuse"
+    ]
+  },
+  {
+    "id": "cmd_substitution_linux",
+    "metadata": {
+      "os": "linux",
+      "pattern_type": "substitution-pattern"
+    },
+    "module": "cmd",
+    "notes": "Concept-only substitution pattern using [[SUBSTITUTION_TOKEN]]. Defenders should apply strict validation, disable unsafe interpreters, and isolate privileged operations.",
+    "template": "{{CMD_INJECTION_SUBSTITUTION_TEMPLATE_LINUX}}",
+    "transforms": [
+      "url",
+      "base64",
+      "hex",
+      "case_variation_description",
+      "safe_obfuscation:comment_insertion",
+      "safe_obfuscation:mixed_encoding_note",
+      "safe_obfuscation:whitespace_abuse"
+    ]
+  }
+]

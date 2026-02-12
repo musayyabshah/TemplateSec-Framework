@@ -1,0 +1,60 @@
+[
+  {
+    "blind_mode_description": "Educational blind mode concept: compare abstract true/false branches or timing indicators using [[BOOLEAN_BRANCH_TOKEN]] and [[SLEEP_FUNCTION]].",
+    "id": "sqli_blind_mysql",
+    "metadata": {
+      "db": "mysql",
+      "type": "blind"
+    },
+    "module": "sqli",
+    "notes": "Concept-only blind logic description. Defenders should detect timing anomalies, enforce least privilege, and use prepared statements across all data access paths.",
+    "template": "{{SQLI_BLIND_TEMPLATE_MYSQL}}",
+    "transforms": [
+      "url",
+      "base64",
+      "hex",
+      "boolean_token_swaps",
+      "safe_obfuscation:comment_insertion",
+      "safe_obfuscation:mixed_encoding_note",
+      "safe_obfuscation:whitespace_abuse"
+    ]
+  },
+  {
+    "id": "sqli_error_mysql",
+    "metadata": {
+      "db": "mysql",
+      "type": "error-based"
+    },
+    "module": "sqli",
+    "notes": "Concept-only error-based pattern. Defenders should use parameterized queries, generic error handling, and strict input validation. Abstract bypass token: [[SQL_COMMENT_TOKEN]].",
+    "template": "{{SQLI_ERROR_TEMPLATE_MYSQL}}",
+    "transforms": [
+      "url",
+      "base64",
+      "hex",
+      "keyword_case_variation_description",
+      "safe_obfuscation:comment_insertion",
+      "safe_obfuscation:mixed_encoding_note",
+      "safe_obfuscation:whitespace_abuse"
+    ]
+  },
+  {
+    "id": "sqli_union_mysql",
+    "metadata": {
+      "db": "mysql",
+      "type": "union-based"
+    },
+    "module": "sqli",
+    "notes": "Concept-only union-style structure for defensive study. Defenders should restrict query structure changes, validate schema-bound inputs, and monitor anomalous query shapes. Abstract token: [[UNION_KEYWORD]].",
+    "template": "{{SQLI_UNION_TEMPLATE_MYSQL}}",
+    "transforms": [
+      "url",
+      "base64",
+      "hex",
+      "comment_token_insertion",
+      "safe_obfuscation:comment_insertion",
+      "safe_obfuscation:mixed_encoding_note",
+      "safe_obfuscation:whitespace_abuse"
+    ]
+  }
+]
